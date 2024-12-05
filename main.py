@@ -207,7 +207,7 @@ async def handle_contact(message: Message):
     if not await check_user(message.chat.id):
         if message.contact and message.contact.phone_number:
             phone_number = message.contact.phone_number
-            name = f"{message.chat.first_name if message.chat.first_name else ""} {message.chat.last_name if message.chat.last_name else ""}"
+            name = f'{message.chat.first_name if message.chat.first_name else ""} {message.chat.last_name if message.chat.last_name else ""}'
             await create_bot_user(message.chat.id, name, phone_number)
             await message.answer(
                 f"👤 *Ism familiyangiz:* `{name}`\n"
